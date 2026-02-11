@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+}
+
+.hero {
+    background-color: var(--color-blue);
+    color: var(--color-light);
+}
+
+.header {
+    padding-block: 20px 40px;
+}
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.header__nav {
+    position: relative;
+    margin-top: 30px;
+}
+
+.header__contacts {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header__contact {
+    @include reset-link;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-light);
+    opacity: 0.9;
+}
+
+.header__contact-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.header__socials {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header__social-link img {
+    width: 18px;
+    height: 18px;
+}
+
+.nav {
+    margin-top: 0;
+    background-color: var(--color-light);
+    border-radius: 10px;
+    padding-inline: 40px;
+    padding-block: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__list--right {
+    justify-content: flex-end;
+}
+
+.nav__link {
+    @include reset-link;
+    @include fluid-text(18, 14);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--color-dark);
+}
+
+.nav__link--active {
+    color: var(--color-blue);
+}
+
+.nav__logo {
+    @include reset-link;
+    position: absolute;
+    left: 50%;
+    top: -26px;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 40px;
+    border-radius: 10px;
+    background-color: var(--color-light);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.nav__logo-img {
+    display: block;
+    height: 40px;
+}
+
+.button {
+    @include resset-button;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+
+    @include hover {
+        opacity: 0.9;
+    }
+}
+
+.button--primary {
+    background-color: var(--color-blue);
+    color: var(--color-light);
+}
+
+.nav__burger {
+    @include resset-button;
+    @include fllex-center;
+    width: 40px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: var(--color-light);
+}
+
+.nav__burger-line,
+.nav__burger-line::before,
+.nav__burger-line::after {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--color-dark);
+    content: "";
+}
+
+.nav__burger-line {
+    position: relative;
+}
+
+.nav__burger-line::before {
+    position: absolute;
+    top: -6px;
+    left: 0;
+}
+
+.nav__burger-line::after {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+}
+
+.nav-menu {
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    right: 20px;
+    padding: 24px 28px;
+    background-color: var(--color-light);
+    border-radius: 10px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 100;
+}
+
+.nav-menu--open {
+    display: flex;
+}
+
+.nav-menu__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-menu__title {
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.nav-menu__close {
+    @include resset-button;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.nav-menu__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-menu__link {
+    @include reset-link;
+    font-weight: 500;
+    color: var(--color-dark);
+}
+
+.nav-menu__link--active {
+    color: var(--color-blue);
+}
+
+@include tablet-above {
+    .nav__logo-img {
+        height: 56px;
+    }
+
+    .nav__burger {
+        display: none;
+    }
+}
