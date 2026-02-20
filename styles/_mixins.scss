@@ -10,13 +10,13 @@
     }
 }
 
-@mixin resset-button{
+@mixin reset-button{
     padding: 0;
     background-color: transparent;
     border: none;
 }
 
-@mixin fllex-center($isInline: false){
+@mixin flex-center($isInline: false){
 @if $isInline {
     display: inline-flex;
 }@else{

@@ -42,17 +42,23 @@ body {
 }
 
 .header {
-    padding-block: 30px 40px;
+    padding-block: 20px 40px;
 }
 
 .header__top {
+    padding: 10px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
     font-size: 14px;
 }
-
+@media (max-width: 700px) {
+    .header__top {
+        padding: 20px;
+        display: none;
+    }
+}
 .header__contacts {
     display: flex;
     align-items: center;
@@ -116,8 +122,7 @@ font-weight: 600;
 font-size: 20px;
 line-height: 30px;
 text-transform: uppercase;
-    padding-left: 325px;
-    justify-content: flex-end;
+    margin-left: auto;
 }
 
 .nav__link {
@@ -133,7 +138,9 @@ text-transform: uppercase;
 }
 
 .nav__logo {
-    width: 200px;
+    width: 50%;
+    max-width: 200px;
+    min-width: 100px;
     height: 90px;
     position: absolute;
     left: 50%;
@@ -150,7 +157,9 @@ text-transform: uppercase;
 }
 
 .nav__logo-img {
-width: 167px;
+    width: 50%;
+    max-width: 200px;
+    min-width: 100px;
 height: 30px;
 top: 90px;
 left: 637px;
@@ -190,6 +199,7 @@ display: block;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .nav__burger-line,
@@ -234,7 +244,6 @@ height: 356px;
     gap: 20px;
     z-index: 100;
 
-    /* animated open/close (instead of display: none) */
     opacity: 0;
     transform: translateY(-8px);
     visibility: hidden;
@@ -283,7 +292,6 @@ left: 10px;
     cursor: pointer;
     transition: opacity 0.2s ease;
 
-    /* hide the "×" text in HTML, keep aria-label */
     font-size: 0;
     line-height: 0;
 }
@@ -308,20 +316,35 @@ left: 10px;
     color: var(--color-blue);
 }
 
-@media (min-width: 771px) {
+@media (min-width: 1051px) {
     .hidden-mobile {
         display: flex !important;
     }
-
     .visible-mobile {
         display: none !important;
     }
 
     .nav__logo-img {
         height: 56px;
+        min-width: 120px; 
+        margin-right: 20px; 
     }
 
     .nav__burger {
         display: none;
     }
+
+    .nav__list--right {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 15px; 
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
+
