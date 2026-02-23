@@ -359,14 +359,6 @@ body {
   align-items: center;
 }
 
-.download_app_now{
-width: 620px;
-height: 535px;
-opacity: 1;
-top: 321px;
-left: 135px;
-}
-
 .app_now{
 border: 18px solid #7572FF;
 width: 570;
@@ -374,7 +366,7 @@ height: 535;
 opacity: 1;
 top: 321px;
 left: 185px;
-z-index: 1;
+z-index: 2;
 }
 
 .download_app {
@@ -389,6 +381,7 @@ left: 135px;
 display: flex;
 flex-direction: column; 
 align-items: flex-start; 
+z-index: 1;
 }
 
 .great_app{
@@ -465,7 +458,3 @@ gap: 20px;
   }
 }
 
-.download_app_now{
-  display: flex;
-
-}
