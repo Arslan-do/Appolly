@@ -8,28 +8,36 @@
   --container-padding-x: 20px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
   color: var(--color-dark);
   background-color: var(--color-light);
+ 
 }
 
 .container {
+  position: relative;
+  width: 100%;
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   margin-inline: auto;
   padding-inline: var(--container-padding-x);
 }
 
-.hidden-mobile {
+/* .hidden-mobile {
   display: none !important;
 }
 
 .visible-mobile {
   display: inline-flex !important;
-}
+} */
 
 .hero {
+  height: 1024px;
   /* Фоновое изображение для секции */
   background-image: url('../images/Background Image.svg');
   background-repeat: no-repeat;
@@ -39,6 +47,13 @@ body {
   /* Цвет текста и запасной цвет фона */
   background-color: var(--color-blue);
   color: var(--color-light);
+}
+
+@media(max-width: 1440px) {
+  .hero{
+    width: 100%;
+    min-width: 1440px;
+  }
 }
 
 .header {
@@ -53,12 +68,7 @@ body {
   gap: 20px;
   font-size: 14px;
 }
-/* @media (max-width: 700px) {
-  .header__top {
-    padding: 20px;
-    display: none;
-  }
-} */
+
 .header__contacts {
   display: flex;
   align-items: center;
@@ -255,13 +265,13 @@ body {
 .nav-menu--open {
   padding: 3px 28px;
   font-family: Josefin Sans;
-  font-weight: 600px;
+  font-weight: 600;
   font-size: 20px;
   line-height: 30px;
   letter-spacing: 0%;
   text-transform: uppercase;
-  width: 71;
-  height: 30;
+  width: 71px;
+  height: 30px;
   opacity: 1;
   top: 130px;
   left: 10px;
@@ -347,32 +357,34 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
+  gap: 20px;
 }
 
 .app_now {
-  width: 70%;
-  max-width: 570px;
+  width: 485px;
+  height: 432px;
+  position: absolute;
+  top: 150px;
+  left: 65px;
   display: inline-block;
   padding: 30px;
   border: 18px solid #7572ff;
   justify-self: start;
-  transform: translateX(80px);
-  z-index: 1;
+  z-index: 10;
 }
 
 .download_app {
   background: var(--color-light);
+  position: absolute;
   width: 570px;
   height: 432px;
+  top: 30px;
+  left: -65px;
   opacity: 1;
-  top: 372px;
-  left: 135px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   color: var(--color-dark);
-  transform: translateX(-120px);
-  z-index: 20;
 }
 
 .great_app {
@@ -388,17 +400,17 @@ body {
 }
 
 .amet_minim {
-  padding: 10px 30px;
+  padding: 28px 30px;
   color: #6c6c72;
   font-family: Josefin Sans, sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 16.50px;
   line-height: 24px;
 }
 
 .download_text {
-  padding: 40px 10px 0px 20px;
-  margin: 10px 10px;
+  padding: 15px 10px 0px 20px;
+  margin: 0px 10px;
   color: var(--color-dark);
   font-family: Josefin Sans, sans-serif;
   font-weight: 600;
@@ -410,206 +422,28 @@ body {
 
 .download_store_google {
   margin: 10px 25px;
+  position: absolute;
+  top: 330px;
+  left: 0px;
   display: flex;
   width: 314px;
   height: 47px;
   opacity: 1;
-  top: 717px;
-  left: 165px;
   gap: 20px;
 }
 
 .image_Mobile_App {
-  width: 646px;
+  position: absolute;
+  top: 50px;
+  left: 590px;
+  width: 100%;
+  max-width: 646px;
   height: 725px;
   opacity: 1;
-  top: 216px;
-  left: 879px;
-  justify-self: end;
   margin-left: 100px;
 }
 
-@media (min-width: 1051px) {
-   .hidden-mobile {
-    display: flex !important;
-  }
-  .visible-mobile {
-    display: none !important;
-  }
-}
 
-@media (max-width: 768px) {
- .hero{
-  width: 800px;
- }
-  /* 1. Верхняя плашка контактов прячется */
-  .header__top {
-    display: none;
-  }
 
-  /* 2. Основной навбар: логотип + бургер */
-  .hidden-mobile {
-    display: none !important; /* списки меню прячем */
-  }
+/* section about app */
 
-  .visible-mobile {
-    display: inline-flex !important; /* бургер и мобильное меню */
-  }
-
-  /* 3. Hero блок в одну колонку */
-  .hero_2 {
-    height: 700px;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  .great_app {
-    margin: auto;
-    padding-left: 10px;
-    width: 331px;
-    height: 95px;
-    font-size: 31px;
-  }
-
-  .amet_minim {
-    padding: 1px 6px;
-    font-size: smaller;
-    width: 100%;
-    max-width: 356px;
-    height: 66px;
-  }
-
-  .download_text {
-    width: 231px;
-    height: 30px;
-    font-size: larger;
-  }
-
-  .download_store_google {
-    margin: auto;
-    margin-left: 10px;
-    width: 356px;
-    height: 318px;
-  }
-  .download_app {
-    transform: translateX(-57px);
-    width: 112%;
-    max-width: 356px;
-    height: 318px;
-  }
-
-  .app_now {
-    transform: translateX(40px);
-    padding: 10px 0px;
-    padding-left: 15px;
-    width: 320px;
-    height: 320px;
-  }
-
-  .image_Mobile_App {
-    margin: auto;
-    padding: 70px;
-    width: 285px;
-    height: 425px;
-  }
-}
-
-@media (max-width: 390px) {
-  .hero{
-    width:700px ;
-  }
-  .header__top {
-    display: none;
-  }
-
-  .hidden-mobile {
-    display: none !important; /* списки меню прячем */
-  }
-
-  .visible-mobile {
-    display: inline-flex !important;
-  }
-  .nav {
-    margin: auto;
-    margin-left: 15px;
-    width: 540px;
-    height: 60px;
-  }
-
-  .nav__logo {
-    transform: translateX(-100px);
-    width: 140px;
-    height: 80px;
-    border-radius: 5px;
-  }
-
-  .nav__logo-img {
-    transform: translateX(10px);
-    width: 79px;
-    height: 20px;
-  }
-
-  .button--primary {
-    width: 76px;
-    height: 25px;
-    font-size: 15px;
-    border-radius: 3px;
-  }
-
-  .hero_2 {
-    height: 1224px;
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .great_app {
-    margin: auto;
-    padding-left: 10px;
-    width: 331px;
-    height: 95px;
-    font-size: 31px;
-  }
-
-  .amet_minim {
-    padding: 1px 6px;
-    font-size: smaller;
-    width: 100%;
-    max-width: 356px;
-    height: 66px;
-  }
-
-  .download_text {
-    width: 231px;
-    height: 30px;
-    font-size: larger;
-  }
-
-  .download_store_google {
-    margin: auto;
-    margin-left: 10px;
-    width: 356px;
-    height: 318px;
-  }
-  .download_app {
-    transform: translateX(-57px);
-    width: 112%;
-    max-width: 356px;
-    height: 318px;
-  }
-
-  .app_now {
-    transform: translateX(120px) translateY(70px);
-    padding: 10px 0px;
-    padding-left: 15px;
-    width: 320px;
-    height: 320px;
-  }
-
-  .image_Mobile_App {
-    transform: translateX(80px);
-    margin: auto;
-    padding: 70px;
-    width: 465px;
-    height: 520px;
-  }
-}
